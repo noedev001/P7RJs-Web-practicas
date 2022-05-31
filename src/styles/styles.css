@@ -1,0 +1,272 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --spasing: 0.75rem;
+    --size: 5rem;
+    --secundary: #2a8ce1;
+    --colorjugador: #E40320;
+}
+
+body {
+    font-family: sans-serif;
+    background: #102132;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 2rem 1rem;
+}
+
+h1 {
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: white;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: white;
+}
+
+h3 {
+    margin-bottom: var(--spasing);
+    color: white;
+    font-weight: normal;
+}
+
+section {
+    margin-bottom: 4rem;
+    padding: 1rem;
+    background: #0c1926;
+    border-radius: 20px;
+}
+
+
+.contenedor-jugador {
+    overflow: hidden;
+    padding-bottom: 2rem;
+
+}
+
+
+section>div:not(.cancha):not(.contenedor-jugadores) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+
+
+
+article img {
+    width: var(--size);
+    height: var(--size);
+    object-fit: cover;
+    border-radius: 100%;
+    margin-bottom: var(--spasing);
+}
+
+
+button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    height: 2rem
+}
+
+button:first-child {
+    color: white;
+    background-color: var(--secundary);
+    margin-right: var(--spasing);
+
+}
+
+button:first-child:hover {
+    color: white;
+    background-color: rgb(58, 62, 65);
+    margin-right: var(--spasing);
+}
+
+button:nth-child(2) {
+    background: white;
+    color: var(--secundary);
+
+}
+
+button:nth-child(2):hover {
+    background-color: rgb(58, 62, 65);
+    color: #fff;
+}
+
+
+.jugador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px 2px rgba(#000, 0.05);
+    border: 1px solid #104266;
+}
+
+.titular,
+.suplentes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.titular,
+.suplentes>img {
+    margin-bottom: 0px;
+}
+
+
+.titular,
+.suplentes>div {
+    position: relative;
+}
+
+
+.titular,
+.suplentes>p {
+    color: #fff;
+    background-color: rgba(#000, 0.5);
+    padding: 0 1rem;
+    line-height: 1.5;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+}
+
+
+.titular,
+.suplentes>button {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 50%;
+
+    display: none;
+}
+
+
+.titular,
+.suplentes>button:hover {
+    display: flex;
+}
+
+
+.cancha {
+    margin: 0 auto;
+    width: 75%;
+    position: relative;
+}
+
+.cancha .titular {
+    position: absolute;
+}
+
+.titular:first-child {
+    left: 12%;
+    top: 20%;
+
+}
+
+.titular:nth-child(2) {
+    left: 46%;
+    top: 55%;
+}
+
+.titular:nth-child(3) {
+    left: 53%;
+    top: 77%;
+}
+
+.titular:nth-child(4) {
+    left: 87%;
+    top: 85%;
+}
+
+.titular:nth-child(5) {
+    left: 79%;
+    top: 92%;
+}
+
+.maps {
+    width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+    section>div:not(.maps):not(.contenedor-jugadores) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .cancha .titular>p {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+    article img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    article img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+}
+
+/* @media screen and (min-width: 1444px) {
+    article img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .titular:first-child {
+        left: 8%;
+        top: 25%;
+
+    }
+
+    .titular:nth-child(2) {
+        left: 43%;
+        top: 55%;
+    }
+
+    .titular:nth-child(3) {
+        left: 44%;
+        top: 80%;
+    }
+
+    .titular:nth-child(4) {
+        left: 78%;
+        top: 85%;
+    }
+
+    .titular:nth-child(5) {
+        left: 72%;
+        top: 92%;
+    }
+} */
